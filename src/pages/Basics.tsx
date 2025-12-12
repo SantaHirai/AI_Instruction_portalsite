@@ -1,6 +1,7 @@
 import React from 'react';
 import { SpeechBubble } from '../components/ui/SpeechBubble';
 import { Card } from '../components/ui/Card';
+import guideImage from '../assets/images/guide.png';
 
 export const Basics: React.FC = () => {
   return (
@@ -13,7 +14,7 @@ export const Basics: React.FC = () => {
       {/* What is AI? */}
       <section className="space-y-6">
         <h2 className="text-2xl font-bold text-text-main border-b-2 border-primary-100 pb-2">生成AIってなに？</h2>
-        <SpeechBubble name="案内係" position="left" avatar="/images/guide.png">
+        <SpeechBubble name="案内係" position="left" avatar={guideImage}>
           <p>
             「生成AI」は、私たちの言葉を理解して、文章や画像を作ってくれる
             <strong>「頼れるアシスタント」</strong>のような存在です。<br />

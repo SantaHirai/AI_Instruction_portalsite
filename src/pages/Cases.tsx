@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Card } from '../components/ui/Card';
 import { SpeechBubble } from '../components/ui/SpeechBubble';
+import guideImage from '../assets/images/guide.png';
 
 type Category = 'all' | 'housework' | 'travel' | 'writing' | 'health' | 'hobby' | 'learning' | 'security';
 
@@ -59,7 +60,7 @@ export const Cases: React.FC = () => {
             <SpeechBubble name="あなた" position="right" avatar="https://Placehold.co/100x100?text=user">
               <p>冷蔵庫に大根と豚肉しかないわ。<br/>何かいいレシピないかしら？</p>
             </SpeechBubble>
-            <SpeechBubble name="案内係" position="left" avatar="/images/guide.png">
+            <SpeechBubble name="案内係" position="left" avatar={guideImage}>
               <p>
                 「大根と豚肉で作れる、ご飯が進む煮物のレシピを教えて」
                 と聞いてみましょう。調理時間や味付けの好み（甘辛、さっぱり等）も伝えると、よりぴったりのレシピを提案してくれますよ。
@@ -85,7 +86,7 @@ export const Cases: React.FC = () => {
             <SpeechBubble name="あなた" position="right" avatar="https://Placehold.co/100x100?text=user">
               <p>来月、京都に行くんだけど、効率よく回るコースが知りたいな。</p>
             </SpeechBubble>
-            <SpeechBubble name="案内係" position="left" avatar="/images/guide.png">
+            <SpeechBubble name="案内係" position="left" avatar={guideImage}>
               <p>
                 行きたい場所と日程を伝えると、移動時間を考慮したスケジュールを作ってくれます。
                 足腰に優しいルートや、混雑を避けた穴場スポットを聞くのも良いですね。

@@ -2,9 +2,12 @@ import React from 'react';
 import { Card } from '../components/ui/Card';
 import { SpeechBubble } from '../components/ui/SpeechBubble';
 import { QAItem, QAContainer } from '../components/ui/QA';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import guideImage from '../assets/images/guide.png';
 
 export const Home: React.FC = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="space-y-12 max-w-4xl mx-auto">
       {/* Hero Section */}
@@ -26,7 +29,7 @@ export const Home: React.FC = () => {
 
       {/* Introduction Bubble */}
       <section className="max-w-3xl mx-auto">
-        <SpeechBubble name="案内係" position="left" avatar="/images/guide.png">
+        <SpeechBubble name="案内係" position="left" avatar={guideImage}>
           <p className="leading-relaxed">
             こんにちは！このサイトでは、難しい専門用語を使わずに、
             AI（人工知能）が私たちの生活をどう便利にしてくれるのかを紹介します。
@@ -37,14 +40,14 @@ export const Home: React.FC = () => {
 
       {/* Featured Sections (Cards) */}
       <section className="grid md:grid-cols-2 gap-6">
-        <Card title="活用例を見る" onClick={() => window.location.href='/cases'} className="hover:border-primary-200">
+        <Card title="活用例を見る" onClick={() => navigate('/cases')} className="hover:border-primary-200">
           <p className="text-text-main mb-4 leading-relaxed">
             「献立を考える」「旅行の計画を立てる」など、
             日常の困りごとをAIがどう助けてくれるかを見てみましょう。
           </p>
           <span className="text-primary-600 font-bold text-sm">詳しく見る &rarr;</span>
         </Card>
-        <Card title="おすすめツール" onClick={() => window.location.href='/tools'} className="hover:border-primary-200">
+        <Card title="おすすめツール" onClick={() => navigate('/tools')} className="hover:border-primary-200">
           <p className="text-text-main mb-4 leading-relaxed">
             初心者でも使いやすい、安全なAIツールを厳選して紹介します。
             まずはここから試してみましょう。
