@@ -33,7 +33,7 @@ export const Cases: React.FC = () => {
             {categories.map((cat) => (
               <button
                 key={cat.id}
-                onClick={() => setSelectedCategory(cat.id)}
+                onClick={() => setSelectedCategory(selectedCategory === cat.id ? 'all' : cat.id)}
                 className={`
                   px-4 py-1.5 rounded-full text-sm font-medium transition-colors
                   ${selectedCategory === cat.id
