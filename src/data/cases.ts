@@ -1,6 +1,6 @@
 import guideImage from '../assets/images/guide.png';
 
-export type CategoryId = 'all' | 'housework' | 'travel' | 'writing' | 'health' | 'hobby' | 'learning' | 'security';
+export type CategoryId = 'all' | 'housework' | 'travel' | 'writing' | 'health' | 'hobby' | 'learning' | 'security' | 'shopping';
 
 export interface Category {
     id: CategoryId;
@@ -16,6 +16,7 @@ export const categories: Category[] = [
     { id: 'hobby', label: '趣味・娯楽' },
     { id: 'learning', label: '学び・自分磨き' },
     { id: 'security', label: '防犯・トラブル' },
+    { id: 'shopping', label: '買い物' },
 ];
 
 export interface DialogueLine {
