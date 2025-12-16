@@ -1,7 +1,9 @@
 import React, { useState, useMemo } from 'react';
 import { Card } from '../components/ui/Card';
 import { SpeechBubble } from '../components/ui/SpeechBubble';
-import { categories, cases, avatars, type CategoryId } from '../data/cases';
+import { FormattedText } from '../components/ui/FormattedText';
+import { categories, cases, avatars } from '../data/cases';
+import type { CategoryId } from '../types';
 
 export const Cases: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<CategoryId>('all');
@@ -11,14 +13,7 @@ export const Cases: React.FC = () => {
     return cases.filter(c => c.categoryId === selectedCategory);
   }, [selectedCategory]);
 
-  const renderText = (text: string) => {
-    return text.split('<br/>').map((line, i, arr) => (
-      <React.Fragment key={i}>
-        {line}
-        {i < arr.length - 1 && <br />}
-      </React.Fragment>
-    ));
-  };
+
 
   return (
     <div className="space-y-12 max-w-4xl mx-auto">
@@ -66,7 +61,7 @@ export const Cases: React.FC = () => {
                   position={line.speaker === 'user' ? 'right' : 'left'}
                   avatar={avatars[line.speaker]}
                 >
-                  <p>{renderText(line.text)}</p>
+                  <p><FormattedText text={line.text} /></p>
                 </SpeechBubble>
               ))}
             </div>
@@ -74,10 +69,10 @@ export const Cases: React.FC = () => {
 
           {item.type === 'description' && item.description && (
             <Card>
-              <p className="mb-4">{renderText(item.description)}</p>
+              <p className="mb-4"><FormattedText text={item.description} /></p>
               {item.prompt && (
                 <p className="text-text-main font-mono bg-primary-50 p-3 rounded border border-primary-100">
-                  {renderText(item.prompt.text)}
+                  <FormattedText text={item.prompt.text} />
                 </p>
               )}
             </Card>
@@ -90,7 +85,7 @@ export const Cases: React.FC = () => {
                 {item.prompt.title || 'おすすめの頼み方（プロンプト）'}
               </h3>
               <p className="text-text-main font-mono bg-white p-3 rounded border border-primary-200">
-                {renderText(item.prompt.text)}
+                <FormattedText text={item.prompt.text} />
               </p>
             </Card>
           )}

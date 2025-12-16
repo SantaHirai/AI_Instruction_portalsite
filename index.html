@@ -1,48 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>生成AIの取扱説明書</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primary: {
-                50: "#f0f9ff",
-                100: "#e0f2fe",
-                500: "#0ea5e9",
-                600: "#0284c7",
-                700: "#0369a1",
-              },
-              accent: {
-                50: "#fffbeb",
-                500: "#f59e0b",
-              },
-              surface: "#f8fafc",
-              text: {
-                main: "#334155",
-                muted: "#64748b",
-              },
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="生成AIの取扱説明書。難しい専門用語を使わずに、AI（人工知能）が私たちの生活をどう便利にしてくれるのかを紹介します。" />
+  <meta property="og:title" content="生成AIの取扱説明書" />
+  <meta property="og:description" content="生成AIの取扱説明書。難しい専門用語を使わずに、AI（人工知能）が私たちの生活をどう便利にしてくれるのかを紹介します。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/ogp.png" />
+  <title>生成AIの取扱説明書</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: "#f0f9ff",
+              100: "#e0f2fe",
+              500: "#0ea5e9",
+              600: "#0284c7",
+              700: "#0369a1",
             },
-            fontFamily: {
-              sans: [
-                '"Hiragino Kaku Gothic ProN"',
-                '"Hiragino Sans"',
-                '"Meiryo"',
-                "sans-serif",
-              ],
+            accent: {
+              50: "#fffbeb",
+              500: "#f59e0b",
+            },
+            surface: "#f8fafc",
+            text: {
+              main: "#334155",
+              muted: "#64748b",
             },
           },
+          fontFamily: {
+            sans: [
+              '"Hiragino Kaku Gothic ProN"',
+              '"Hiragino Sans"',
+              '"Meiryo"',
+              "sans-serif",
+            ],
+          },
         },
-      };
-    </script>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+      },
+    };
+  </script>
+</head>
+
+<body class="bg-surface text-text-main font-sans antialiased">
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
 </html>

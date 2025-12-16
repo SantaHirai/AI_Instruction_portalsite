@@ -2,15 +2,9 @@ import React from 'react';
 import { Card } from '../components/ui/Card';
 import { tools } from '../data/tools';
 
+import { FormattedText } from '../components/ui/FormattedText';
+
 export const Tools: React.FC = () => {
-  const renderText = (text: string) => {
-    return text.split('<br/>').map((line, i, arr) => (
-      <React.Fragment key={i}>
-        {line}
-        {i < arr.length - 1 && <br />}
-      </React.Fragment>
-    ));
-  };
 
   const getThemeClasses = (theme: 'emerald' | 'blue') => {
     if (theme === 'emerald') {
@@ -56,7 +50,7 @@ export const Tools: React.FC = () => {
               <div className="flex-grow">
                 <h3 className="text-xl font-bold text-text-main mb-2">{tool.catchphrase}</h3>
                 <p className="text-text-main mb-4 leading-relaxed">
-                  {renderText(tool.description)}
+                  <FormattedText text={tool.description} />
                 </p>
                 <div className="bg-slate-50 p-4 rounded-lg text-sm mb-4">
                   <strong className="block text-slate-700 mb-1">こんな人におすすめ：</strong>

@@ -1,14 +1,4 @@
-export interface ToolItem {
-    id: string;
-    name: string;
-    reading: string;
-    icon: string;
-    catchphrase: string;
-    description: string;
-    recommendedFor: string[];
-    url: string;
-    colorTheme: 'emerald' | 'blue';
-}
+import type { ToolItem } from '../types';
 
 export const tools: ToolItem[] = [
     {

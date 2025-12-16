@@ -1,11 +1,5 @@
 import guideImage from '../assets/images/guide.png';
-
-export type CategoryId = 'all' | 'housework' | 'travel' | 'writing' | 'health' | 'hobby' | 'learning' | 'security' | 'shopping';
-
-export interface Category {
-    id: CategoryId;
-    label: string;
-}
+import type { Category, CaseItem } from '../types';
 
 export const categories: Category[] = [
     { id: 'all', label: 'すべて' },
@@ -18,31 +12,6 @@ export const categories: Category[] = [
     { id: 'security', label: '防犯・トラブル' },
     { id: 'shopping', label: '買い物' },
 ];
-
-export interface DialogueLine {
-    speaker: 'user' | 'guide';
-    text: string; // Contains HTML/JSX
-}
-
-export interface CaseItem {
-    id: string;
-    categoryId: CategoryId;
-    icon: string;
-    title: string;
-    themeColor: 'primary' | 'accent';
-    type: 'dialogue' | 'description';
-
-    // For dialogue type
-    dialogue?: DialogueLine[];
-
-    // For description type
-    description?: string;
-
-    prompt: {
-        title?: string;
-        text: string;
-    };
-}
 
 export const cases: CaseItem[] = [
     {
