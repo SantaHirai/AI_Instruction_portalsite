@@ -18,10 +18,10 @@ export const StickyNav: React.FC = () => {
               key={item.path}
               to={item.path}
               className={({ isActive }) => `
-                flex-1 min-w-[80px] py-3 text-center font-bold text-sm md:text-base relative transition-colors whitespace-nowrap px-4 rounded-full border-2
+                flex-1 min-w-[80px] py-3 text-center font-bold text-base md:text-lg relative transition-colors whitespace-nowrap px-4 rounded-full border-2
                 ${isActive 
                   ? 'bg-accent-500 text-white border-accent-500' 
-                  : 'bg-white text-accent-500 border-accent-500 hover:bg-orange-50'
+                  : 'bg-white text-accent-500 border-accent-500 hover:bg-accent-50'
                 }
               `}
             >
