@@ -1,4 +1,5 @@
 import guideImage from '../assets/images/guide.png';
+import userImage from '../assets/images/user.png';
 import type { Category, CaseItem } from '../types';
 
 export const categories: Category[] = [
@@ -74,6 +75,6 @@ export const cases: CaseItem[] = [
 
 // Helper to get avatar URL (since we can't fully put component logic in data easily, but we can store paths)
 export const avatars = {
-    user: "https://Placehold.co/100x100?text=user",
+    user: userImage,
     guide: guideImage
 };
