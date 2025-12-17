@@ -6,6 +6,7 @@ interface SpeechBubbleProps {
   avatar?: string; // URL or name
   name?: string;
   className?: string;
+  flipAvatar?: boolean;
 }
 
 export const SpeechBubble: React.FC<SpeechBubbleProps> = ({
@@ -13,7 +14,8 @@ export const SpeechBubble: React.FC<SpeechBubbleProps> = ({
   position = 'left',
   avatar,
   name,
-  className = ''
+  className = '',
+  flipAvatar = false
 }) => {
   const isLeft = position === 'left';
 
@@ -22,7 +24,11 @@ export const SpeechBubble: React.FC<SpeechBubbleProps> = ({
       <div className="shrink-0 flex flex-col items-center gap-1">
         <div className="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center text-primary-600 font-bold border-2 border-white shadow-sm font-sans overflow-hidden p-1">
           {avatar ? (
-            <img src={avatar} alt={name ? `${name}のアイコン` : 'アバター'} className="w-full h-full object-contain" />
+            <img
+              src={avatar}
+              alt={name ? `${name}のアイコン` : 'アバター'}
+              className={`w-full h-full object-contain ${flipAvatar ? 'scale-x-[-1]' : ''}`}
+            />
           ) : (
             <span>{name ? name[0] : 'AI'}</span>
           )}
@@ -33,7 +39,7 @@ export const SpeechBubble: React.FC<SpeechBubbleProps> = ({
       <div className={`
         relative p-4 rounded-2xl max-w-[80%]
         ${isLeft ? 'bg-white rounded-tl-none text-text-main' : 'bg-primary-50 rounded-tr-none text-text-main'}
-        shadow-sm border border-slate-100
+        shadow-sm border border-slate-300
       `}>
         {children}
       </div>

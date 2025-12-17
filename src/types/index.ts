@@ -39,5 +39,6 @@ export interface CaseItem {
     prompt: {
         title?: string;
         text: string;
+        aiResponse?: string;
     };
 }

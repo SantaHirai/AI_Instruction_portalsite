@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { Card } from '../components/ui/Card';
 import { SpeechBubble } from '../components/ui/SpeechBubble';
 import { FormattedText } from '../components/ui/FormattedText';
+import { AnswerExample } from '../components/cases/AnswerExample';
 import { categories, cases, avatars } from '../data/cases';
 import type { CategoryId } from '../types';
 
@@ -71,9 +72,21 @@ export const Cases: React.FC = () => {
             <Card>
               <p className="mb-4"><FormattedText text={item.description} /></p>
               {item.prompt && (
-                <p className="text-text-main font-mono bg-primary-50 p-3 rounded border border-primary-100">
-                  <FormattedText text={item.prompt.text} />
-                </p>
+                <div className="space-y-4">
+                  <SpeechBubble
+                    name="あなた"
+                    position="right"
+                    avatar={avatars.promptUser}
+                  >
+                    <div className="font-mono text-sm leading-relaxed">
+                      <FormattedText text={item.prompt.text} />
+                    </div>
+                  </SpeechBubble>
+
+                  {item.prompt.aiResponse && (
+                    <AnswerExample response={item.prompt.aiResponse} />
+                  )}
+                </div>
               )}
             </Card>
           )}
@@ -84,9 +97,21 @@ export const Cases: React.FC = () => {
               <h3 className="font-bold text-primary-700 mb-2">
                 {item.prompt.title || 'おすすめの頼み方（プロンプト）'}
               </h3>
-              <p className="text-text-main font-mono bg-white p-3 rounded border border-primary-200">
-                <FormattedText text={item.prompt.text} />
-              </p>
+              <div className="space-y-4">
+                <SpeechBubble
+                  name="あなた"
+                  position="right"
+                  avatar={avatars.promptUser}
+                >
+                  <div className="font-mono text-sm leading-relaxed">
+                    <FormattedText text={item.prompt.text} />
+                  </div>
+                </SpeechBubble>
+
+                {item.prompt.aiResponse && (
+                  <AnswerExample response={item.prompt.aiResponse} />
+                )}
+              </div>
             </Card>
           )}
         </section>
