@@ -16,5 +16,9 @@ export const KEYWORDS: KeywordItem[] = [
     {
         term: 'PDF',
         description: 'どんな端末でも同じ見た目で文書を閲覧できる電子ファイルの形式'
+    },
+    {
+        term: 'プロンプト',
+        description: 'AIへの命令文'
     }
 ];
