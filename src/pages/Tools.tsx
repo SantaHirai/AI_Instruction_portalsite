@@ -3,6 +3,7 @@ import { Card } from '../components/ui/Card';
 import { tools } from '../data/tools';
 
 import { FormattedText } from '../components/ui/FormattedText';
+import { ExternalLinkIcon } from '../components/ui/ExternalLinkIcon';
 
 export const Tools: React.FC = () => {
 
@@ -63,9 +64,10 @@ export const Tools: React.FC = () => {
                   href={tool.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`inline-block ${theme.button} text-white px-6 py-2 rounded-full transition-colors`}
+                  className={`inline-block ${theme.button} text-white px-6 py-2 rounded-full transition-colors flex items-center justify-center w-fit`}
                 >
                   公式サイトを見てみる
+                  <ExternalLinkIcon className="w-4 h-4 ml-2" />
                 </a>
               </div>
             </div>
