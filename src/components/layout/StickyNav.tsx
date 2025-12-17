@@ -12,13 +12,13 @@ export const StickyNav: React.FC = () => {
   return (
     <nav className="sticky top-0 z-40 bg-surface shadow-md py-2">
       <div className="container mx-auto px-4">
-        <div className="flex w-full overflow-x-auto no-scrollbar pb-3 gap-3 md:justify-center">
+        <div className="grid grid-cols-4 w-full gap-1 pb-3 md:flex md:gap-3 md:justify-center">
           {navItems.map((item) => (
             <NavLink
               key={item.path}
               to={item.path}
               className={({ isActive }) => `
-                flex-1 min-w-[80px] max-w-[280px] py-1.5 text-center font-bold text-base md:text-lg relative transition-colors whitespace-nowrap px-4 rounded-full border-2
+                flex items-center justify-center py-1.5 text-center font-bold text-sm md:text-lg relative transition-colors whitespace-nowrap px-1 md:px-4 rounded-full border-2 md:flex-1 md:min-w-[80px] md:max-w-[280px]
                 ${isActive
                   ? 'bg-accent-500 text-white border-accent-500'
                   : 'bg-white text-accent-500 border-accent-500 hover:bg-accent-50'
