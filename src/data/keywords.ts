@@ -20,5 +20,13 @@ export const KEYWORDS: KeywordItem[] = [
     {
         term: 'プロンプト',
         description: 'AIへの命令文'
+    },
+    {
+        term: '点線の下線',
+        description: '見れましたね！'
+    },
+    {
+        term: '人工知能',
+        description: '人間の知能をコンピュータで模倣したもの。学習や推論などができます。'
     }
 ];

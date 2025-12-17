@@ -1,6 +1,7 @@
 import React from 'react';
 import { HeroSection } from '../components/home/HeroSection';
 import { IntroductionSection } from '../components/home/IntroductionSection';
+import { TooltipDemoSection } from '../components/home/TooltipDemoSection';
 import { FeatureCardsSection } from '../components/home/FeatureCardsSection';
 import { FaqSection } from '../components/home/FaqSection';
 
@@ -12,6 +13,9 @@ export const Home: React.FC = () => {
 
       {/* Introduction Bubble */}
       <IntroductionSection />
+
+      {/* Tooltip Demonstration */}
+      <TooltipDemoSection />
 
       {/* Featured Sections (Cards) */}
       <FeatureCardsSection />

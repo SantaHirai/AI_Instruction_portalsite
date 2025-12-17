@@ -1,12 +1,13 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { Home, BookOpen, Sparkles, Wrench } from 'lucide-react';
 
 export const StickyNav: React.FC = () => {
   const navItems = [
-    { path: '/', label: 'ホーム' },
-    { path: '/basics', label: '基本' },
-    { path: '/cases', label: '活用' },
-    { path: '/tools', label: 'ツール' },
+    { path: '/', label: 'ホーム', icon: Home },
+    { path: '/basics', label: '基本', icon: BookOpen },
+    { path: '/cases', label: '活用', icon: Sparkles },
+    { path: '/tools', label: 'ツール', icon: Wrench },
   ];
 
   return (
@@ -27,7 +28,9 @@ export const StickyNav: React.FC = () => {
             >
               {({ isActive }) => (
                 <>
-                  {item.label}
+                  <item.icon size={18} className={`md:mr-2 ${isActive ? 'text-white' : 'text-accent-500'}`} />
+                  <span className="hidden md:inline">{item.label}</span>
+                  <span className="md:hidden">{item.label}</span>
                   {isActive && (
                     <div
                       className="absolute left-1/2 transform -translate-x-1/2 text-accent-500"

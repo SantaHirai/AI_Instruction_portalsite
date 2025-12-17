@@ -1,5 +1,4 @@
 import { FormattedText } from '../ui/FormattedText';
-import { Link } from 'react-router-dom';
 
 export const HeroSection: React.FC = () => {
     return (
@@ -10,12 +9,7 @@ export const HeroSection: React.FC = () => {
             <p className="text-lg text-text-main max-w-2xl mx-auto mb-8 leading-loose">
                 <FormattedText text="「AIって何？」そんな疑問を、やさしく言葉で解決します。<br />新しい家電の取扱説明書のように、安心してお読みください。" />
             </p>
-            <Link
-                to="/basics"
-                className="inline-block bg-primary-600 text-white font-bold py-4 px-8 rounded-full shadow-lg hover:bg-primary-500 transition-colors transform hover:-translate-y-1"
-            >
-                まずは基本を知る
-            </Link>
+
         </section>
     );
 };
