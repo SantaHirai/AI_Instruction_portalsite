@@ -47,8 +47,9 @@ export const Basics: React.FC = () => {
       </section>
 
       {/* Safety First */}
+      <h2 className="text-2xl font-bold text-text-main border-b-2 border-primary-100 pb-2"><FormattedText text={"安心して生成AIを使うために"} /></h2>
       <section className="bg-primary-50 p-8 rounded-2xl">
-        <h2 className="text-xl font-bold text-primary-700 mb-4">安心して使うための3つの約束</h2>
+        <h2 className="text-xl font-bold text-primary-700 mb-4">3つの約束</h2>
         <ul className="space-y-4">
           {safetyRules.map((rule) => (
             <li key={rule.id} className="flex items-start gap-3">

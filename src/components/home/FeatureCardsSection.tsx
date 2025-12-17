@@ -14,9 +14,9 @@ export const FeatureCardsSection: React.FC = () => {
                 </p>
                 <span className="text-primary-600 font-bold text-sm">詳しく見る &rarr;</span>
             </Card>
-            <Card title="おすすめツール" onClick={() => navigate('/tools')} className="hover:border-primary-200">
+            <Card title="おすすめサービス" onClick={() => navigate('/tools')} className="hover:border-primary-200">
                 <p className="text-text-main mb-4 leading-relaxed">
-                    <FormattedText text="初心者でも使いやすい、安全なAIツールを厳選して紹介します。まずはここから試してみましょう。" />
+                    <FormattedText text="初心者でも使いやすい、安全なAIサービスを厳選して紹介します。まずはここから試してみましょう。" />
                 </p>
                 <span className="text-primary-600 font-bold text-sm">詳しく見る &rarr;</span>
             </Card>

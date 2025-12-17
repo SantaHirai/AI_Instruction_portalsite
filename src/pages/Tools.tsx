@@ -26,9 +26,9 @@ export const Tools: React.FC = () => {
   return (
     <div className="space-y-12 max-w-4xl mx-auto">
       <section className="text-center">
-        <h1 className="text-3xl font-bold text-primary-700 mb-4">おすすめAIツール</h1>
+        <h1 className="text-3xl font-bold text-primary-700 mb-4">おすすめAIサービス</h1>
         <p className="text-text-main">
-          <FormattedText text="初心者の方でも使いやすく、安全性の高いツールを厳選しました。<br />まずは無料で試せるものから始めてみましょう。" />
+          <FormattedText text="初心者の方でも使いやすく、安全性の高いサービスを厳選しました。<br />まずは無料で試せるものから始めてみましょう。" />
         </p>
       </section>
 
