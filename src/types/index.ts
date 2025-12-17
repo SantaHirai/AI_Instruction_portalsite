@@ -42,3 +42,16 @@ export interface CaseItem {
         aiResponse?: string;
     };
 }
+
+export interface BasicTermItem {
+    term: string;
+    translation: string;
+    description: string;
+    themeColor: 'primary' | 'accent';
+}
+
+export interface SafetyRuleItem {
+    id: number;
+    title: string;
+    description: string;
+}

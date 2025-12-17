@@ -14,7 +14,6 @@ export const categories: Category[] = [
     { id: 'learning', label: '学び・自分磨き' },
     { id: 'security', label: '防犯・トラブル' },
     { id: 'shopping', label: '買い物' },
-    { id: 'shopping', label: '買い物' },
 ];
 
 export const cases: CaseItem[] = [
