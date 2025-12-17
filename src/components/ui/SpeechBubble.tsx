@@ -7,6 +7,7 @@ interface SpeechBubbleProps {
   name?: string;
   className?: string;
   flipAvatar?: boolean;
+  hideAvatarOnMobile?: boolean;
 }
 
 export const SpeechBubble: React.FC<SpeechBubbleProps> = ({
@@ -15,14 +16,15 @@ export const SpeechBubble: React.FC<SpeechBubbleProps> = ({
   avatar,
   name,
   className = '',
-  flipAvatar = false
+  flipAvatar = false,
+  hideAvatarOnMobile = false
 }) => {
   const isLeft = position === 'left';
 
   return (
-    <div className={`flex items-start gap-4 ${isLeft ? 'flex-row' : 'flex-row-reverse'} ${className}`}>
-      <div className="shrink-0 flex flex-col items-center gap-1">
-        <div className="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center text-primary-600 font-bold border-2 border-white shadow-sm font-sans overflow-hidden p-1">
+    <div className={`flex items-start gap-2 md:gap-4 ${isLeft ? 'flex-row' : 'flex-row-reverse'} ${className}`}>
+      <div className={`shrink-0 flex-col items-center gap-1 ${hideAvatarOnMobile ? 'hidden md:flex' : 'flex'}`}>
+        <div className="w-9 h-9 md:w-12 md:h-12 rounded-full bg-primary-100 flex items-center justify-center text-primary-600 font-bold border-2 border-white shadow-sm font-sans overflow-hidden p-1">
           {avatar ? (
             <img
               src={avatar}
@@ -37,7 +39,8 @@ export const SpeechBubble: React.FC<SpeechBubbleProps> = ({
       </div>
 
       <div className={`
-        relative p-4 rounded-2xl max-w-[80%] group
+        relative p-3 md:p-4 rounded-2xl group
+        ${hideAvatarOnMobile ? 'max-w-full md:max-w-[80%]' : 'max-w-[80%]'}
         ${isLeft
           ? 'bg-white text-text-main ml-2'
           : 'bg-primary-50 text-text-main mr-2'
