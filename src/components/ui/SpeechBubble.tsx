@@ -49,12 +49,12 @@ export const SpeechBubble: React.FC<SpeechBubbleProps> = ({
       `}>
         {/* Tail for Left Bubble */}
         {isLeft && (
-          <div className="absolute top-4 -left-[9px] w-4 h-4 bg-white border-l border-b border-slate-300 transform rotate-45" />
+          <div className="absolute top-4 -left-[10px] w-4 h-4 bg-white border-l border-b border-slate-300 transform rotate-45" />
         )}
 
         {/* Tail for Right Bubble */}
         {!isLeft && (
-          <div className="absolute top-4 -right-[9px] w-4 h-4 bg-primary-50 border-t border-r border-slate-300 transform rotate-45" />
+          <div className="absolute top-4 -right-[10px] w-4 h-4 bg-primary-50 border-t border-r border-slate-300 transform rotate-45" />
         )}
 
         <div className="relative z-10">
