@@ -12,5 +12,9 @@ export const KEYWORDS: KeywordItem[] = [
     {
         term: 'Google検索',
         description: 'インターネット上で調べたいキーワードを入力すると、それに関連するウェブサイトや情報を探し出して一覧で表示してくれるサービス'
+    },
+    {
+        term: 'PDF',
+        description: 'どんな端末でも同じ見た目で文書を閲覧できる電子ファイルの形式'
     }
 ];
