@@ -4,5 +4,8 @@ import { viteSingleFile } from 'vite-plugin-singlefile';
 
 // https://vite.dev/config/
 export default defineConfig({
+  server: {
+    host: true,
+  },
   plugins: [react(), viteSingleFile()],
 });
