@@ -20,7 +20,7 @@ export const Cases: React.FC = () => {
     <div className="space-y-12 max-w-4xl mx-auto">
       <section className="text-center">
         <h1 className="text-3xl font-bold text-primary-700 mb-4">生活での活用例</h1>
-        <p className="text-text-main mb-8">「こんな時に役立つ！」という、日常の具体的なシーンを集めました。</p>
+        <p className="text-text-main mb-8"><FormattedText text="「こんな時に役立つ！」という、日常の具体的なシーンを集めました。" /></p>
 
         {/* Filter Tags */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 bg-white p-4 rounded-xl shadow-sm border border-slate-100">
@@ -50,7 +50,7 @@ export const Cases: React.FC = () => {
         <section key={item.id} className="space-y-6 animate-fade-in">
           <h2 className={`text-2xl font-bold text-text-main flex items-center gap-2 border-l-4 pl-4 ${item.themeColor === 'primary' ? 'border-l-primary-500' : 'border-l-accent-500'
             }`}>
-            <span className="text-3xl">{item.icon}</span> {item.title}
+            <span className="text-3xl">{item.icon}</span> <FormattedText text={item.title} />
           </h2>
 
           {item.type === 'dialogue' && item.dialogue && (
@@ -95,7 +95,7 @@ export const Cases: React.FC = () => {
           {item.type === 'dialogue' && (
             <Card className="bg-primary-50 border-primary-100">
               <h3 className="font-bold text-primary-700 mb-2">
-                {item.prompt.title || 'おすすめの頼み方（プロンプト）'}
+                <FormattedText text={item.prompt.title || 'おすすめの頼み方（プロンプト）'} />
               </h3>
               <div className="space-y-4">
                 <SpeechBubble
@@ -120,7 +120,7 @@ export const Cases: React.FC = () => {
       {/* Empty State */}
       {filteredCases.length === 0 && (
         <div className="text-center py-12 bg-slate-50 rounded-xl border border-dashed border-slate-300">
-          <p className="text-text-muted">このジャンルの活用例は、これから追加される予定です。<br />お楽しみに！</p>
+          <p className="text-text-muted"><FormattedText text="このジャンルの活用例は、これから追加される予定です。<br />お楽しみに！" /></p>
         </div>
       )}
     </div>

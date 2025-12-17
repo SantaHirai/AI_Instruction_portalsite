@@ -10,12 +10,16 @@ export const Basics: React.FC = () => {
     <div className="space-y-12 max-w-4xl mx-auto">
       <section className="text-center">
         <h1 className="text-3xl font-bold text-primary-700 mb-4">基本を知る</h1>
-        <p className="text-text-main">AI（人工知能）の基本を、日常生活の言葉で解説します。</p>
+        <p className="text-text-main">
+          <FormattedText text="AI（人工知能）の基本を、日常生活の言葉で解説します。" />
+        </p>
       </section>
 
       {/* What is AI? */}
       <section className="space-y-6">
-        <h2 className="text-2xl font-bold text-text-main border-b-2 border-primary-100 pb-2">{whatIsAi.title}</h2>
+        <h2 className="text-2xl font-bold text-text-main border-b-2 border-primary-100 pb-2">
+          <FormattedText text={whatIsAi.title} />
+        </h2>
         <SpeechBubble name="案内係" position="left" avatar={guideImage}>
           <p className="leading-relaxed">
             <FormattedText text={whatIsAi.description} />
@@ -26,7 +30,7 @@ export const Basics: React.FC = () => {
       {/* Terminology Translation */}
       <section className="space-y-6">
         <h2 className="text-2xl font-bold text-text-main border-b-2 border-primary-100 pb-2">言葉の「翻訳」リスト</h2>
-        <p className="text-text-main mb-4">専門用語は、普段の言葉に置き換えて覚えましょう。</p>
+        <p className="text-text-main mb-4"><FormattedText text="専門用語は、普段の言葉に置き換えて覚えましょう。" /></p>
         <div className="grid md:grid-cols-2 gap-4">
           {terms.map((item, index) => (
             <Card
@@ -52,7 +56,7 @@ export const Basics: React.FC = () => {
                 {rule.id}
               </span>
               <span className="text-text-main">
-                <strong className="text-primary-800">{rule.title}：</strong> {rule.description}
+                <strong className="text-primary-800"><FormattedText text={rule.title} />：</strong> <FormattedText text={rule.description} />
               </span>
             </li>
           ))}

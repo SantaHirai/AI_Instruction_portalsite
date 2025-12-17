@@ -2,6 +2,8 @@ import React from 'react';
 import { QAItem, QAContainer } from '../ui/QA';
 import { faqData } from '../../data/faq';
 
+import { FormattedText } from '../ui/FormattedText';
+
 export const FaqSection: React.FC = () => {
     return (
         <section className="max-w-3xl mx-auto">
@@ -11,7 +13,7 @@ export const FaqSection: React.FC = () => {
                     <QAItem
                         key={index}
                         question={item.question}
-                        answer={item.answer}
+                        answer={<FormattedText text={item.answer} />}
                     />
                 ))}
             </QAContainer>

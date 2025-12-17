@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 
+import { FormattedText } from './FormattedText';
+
 interface QAItemProps {
   question: string;
   answer: React.ReactNode;
@@ -15,7 +17,7 @@ export const QAItem: React.FC<QAItemProps> = ({ question, answer }) => {
         onClick={() => setIsOpen(!isOpen)}
         className="w-full px-6 py-4 flex justify-between items-center text-left hover:bg-slate-50 transition-colors"
       >
-        <span className="font-bold text-lg text-primary-700 pr-4">Q. {question}</span>
+        <span className="font-bold text-lg text-primary-700 pr-4">Q. <FormattedText text={question} /></span>
         {isOpen ? (
           <ChevronUp className="w-5 h-5 text-text-muted shrink-0" />
         ) : (

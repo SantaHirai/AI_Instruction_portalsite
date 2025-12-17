@@ -55,3 +55,8 @@ export interface SafetyRuleItem {
     title: string;
     description: string;
 }
+
+export interface KeywordItem {
+    term: string;
+    description: string;
+}
