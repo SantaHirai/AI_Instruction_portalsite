@@ -37,11 +37,26 @@ export const SpeechBubble: React.FC<SpeechBubbleProps> = ({
       </div>
 
       <div className={`
-        relative p-4 rounded-2xl max-w-[80%]
-        ${isLeft ? 'bg-white rounded-tl-none text-text-main' : 'bg-primary-50 rounded-tr-none text-text-main'}
+        relative p-4 rounded-2xl max-w-[80%] group
+        ${isLeft
+          ? 'bg-white text-text-main ml-2'
+          : 'bg-primary-50 text-text-main mr-2'
+        }
         shadow-sm border border-slate-300
       `}>
-        {children}
+        {/* Tail for Left Bubble */}
+        {isLeft && (
+          <div className="absolute top-4 -left-[9px] w-4 h-4 bg-white border-l border-b border-slate-300 transform rotate-45" />
+        )}
+
+        {/* Tail for Right Bubble */}
+        {!isLeft && (
+          <div className="absolute top-4 -right-[9px] w-4 h-4 bg-primary-50 border-t border-r border-slate-300 transform rotate-45" />
+        )}
+
+        <div className="relative z-10">
+          {children}
+        </div>
       </div>
     </div>
   );
