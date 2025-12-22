@@ -60,3 +60,37 @@ export interface KeywordItem {
     term: string;
     description: string;
 }
+
+export interface UsageExampleItem {
+    category: string;
+    items: {
+        title: string;
+        description: string;
+    }[];
+}
+
+export interface HallucinationInfo {
+    title: string;
+    description: string;
+    causes: {
+        title: string;
+        description: string;
+    }[];
+    countermeasures: {
+        title: string;
+        description: string;
+    }[];
+}
+
+export interface PromptingTipItem {
+    title: string;
+    description: string; // The "point" or main advice
+    examples?: {
+        bad: string;
+        good: string;
+    };
+    template?: {
+        title: string;
+        content: string;
+    };
+}
