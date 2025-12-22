@@ -14,7 +14,8 @@ export interface ToolItem {
     description: string;
     recommendedFor: string[];
     url: string;
-    colorTheme: 'emerald' | 'blue';
+    category: string;
+    colorTheme: 'emerald' | 'blue' | 'orange' | 'purple' | 'pink' | 'cyan';
 }
 
 export interface DialogueLine {
