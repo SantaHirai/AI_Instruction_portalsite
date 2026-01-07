@@ -66,22 +66,6 @@ export const tools: ToolItem[] = [
         colorTheme: 'cyan'
     },
     {
-        id: 'midjourney',
-        name: 'Midjourney',
-        reading: 'ミッドジャーニー',
-        icon: '🎨',
-        category: '画像生成AI（芸術派）',
-        catchphrase: '言葉をプロ級の絵画に変える「天才アーティスト」',
-        description: '「猫が宇宙で泳いでいる絵」のように、言葉（呪文）を入力するだけで、驚くほど美しい画像を生成します。他の画像生成AIに比べても、特に「芸術的なセンス」や「細部の書き込み」が優れているのが特徴です。チャットアプリ（Discord）を通じて操作するため少し慣れが必要ですが、その分、出来上がった時の感動はひとしおです。趣味の作品作りや、アイデア出しに最適です。',
-        recommendedFor: [
-            'ハイクオリティな絵を作りたい',
-            '芸術的な画像が欲しい',
-            '創作のアイデアが欲しい'
-        ],
-        url: 'https://www.midjourney.com/',
-        colorTheme: 'purple'
-    },
-    {
         id: 'firefly',
         name: 'Adobe Firefly',
         reading: 'アドビ ファイアフライ',
