@@ -1,4 +1,5 @@
 import type { ToolItem } from '../types';
+import fireflyImg from '../assets/images/firefly_screenshot.png';
 
 export const tools: ToolItem[] = [
     {
@@ -79,6 +80,7 @@ export const tools: ToolItem[] = [
             'Adobe製品を使っている'
         ],
         url: 'https://firefly.adobe.com/',
+        image: fireflyImg,
         colorTheme: 'orange'
     },
     {

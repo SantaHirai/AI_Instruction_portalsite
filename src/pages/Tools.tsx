@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card } from '../components/ui/Card';
 import { tools } from '../data/tools';
 import { FormattedText } from '../components/ui/FormattedText';
 import { ExternalLinkIcon } from '../components/ui/ExternalLinkIcon';
+import { Modal } from '../components/ui/Modal';
 
 export const Tools: React.FC = () => {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const getThemeClasses = (theme: 'emerald' | 'blue' | 'orange' | 'purple' | 'pink' | 'cyan') => {
     switch (theme) {
@@ -98,6 +100,24 @@ export const Tools: React.FC = () => {
                         <p className="text-text-main mb-4 leading-relaxed">
                           <FormattedText text={tool.description} />
                         </p>
+
+                        {/* Optional Tool Image (Screenshot) */}
+                        {tool.image && (
+                          <div
+                            className="mb-6 rounded-xl overflow-hidden shadow-sm border border-slate-200 cursor-pointer group"
+                            onClick={() => setSelectedImage(tool.image!)}
+                          >
+                            <img
+                              src={tool.image}
+                              alt={`${tool.name} screen`}
+                              className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
+                            />
+                            <div className="text-center text-xs text-text-muted mt-2 pb-2 group-hover:text-primary-600 transition-colors">
+                              クリックして拡大
+                            </div>
+                          </div>
+                        )}
+
                         <div className="bg-slate-50 p-4 rounded-lg text-sm mb-4">
                           <strong className="block text-slate-700 mb-1">こんな人におすすめ：</strong>
                           <ul className="list-disc list-inside text-text-muted">
@@ -132,6 +152,21 @@ export const Tools: React.FC = () => {
           <FormattedText text="※ どちらも無料で使い始められますが、より高性能な機能を使うには有料プランへの登録が必要な場合があります。<br />「まずは無料版」で十分に便利さを体験できますので、無理に課金する必要はありません。" />
         </p>
       </section>
+
+      {/* Image Modal */}
+      <Modal
+        isOpen={!!selectedImage}
+        onClose={() => setSelectedImage(null)}
+        className="max-w-5xl bg-transparent shadow-none"
+      >
+        {selectedImage && (
+          <img
+            src={selectedImage}
+            alt="Expanded view"
+            className="w-full h-auto rounded-lg shadow-2xl"
+          />
+        )}
+      </Modal>
     </div>
   );
 };

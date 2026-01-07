@@ -15,6 +15,7 @@ export interface ToolItem {
     recommendedFor: string[];
     url: string;
     category: string;
+    image?: string; // Import path for the image
     colorTheme: 'emerald' | 'blue' | 'orange' | 'purple' | 'pink' | 'cyan';
 }
 
