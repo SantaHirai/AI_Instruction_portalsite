@@ -5,7 +5,6 @@ import { FormattedText } from '../components/ui/FormattedText';
 import guideImage from '../assets/images/guide.png';
 import {
   whatIsAi,
-  terms,
   safetyRules,
   usageExamples,
   hallucinationInfo,
@@ -16,7 +15,6 @@ import {
   Brain,
   Smartphone,
   Briefcase,
-  MessageSquare,
   AlertTriangle,
   ShieldAlert,
   Check,
@@ -178,26 +176,7 @@ export const Basics: React.FC = () => {
         </div>
       </section>
 
-      {/* 5. Terms (Existing) */}
-      <section className="space-y-6">
-        <div className="flex items-center gap-3 border-b-2 border-primary-200 pb-2">
-          <MessageSquare className="w-8 h-8 text-primary-600" />
-          <h2 className="text-2xl font-bold text-text-main"><FormattedText text="言葉の「翻訳」リスト" /></h2>
-        </div>
-        <div className="grid md:grid-cols-2 gap-4">
-          {terms.map((item, index) => (
-            <Card
-              key={index}
-              title={<FormattedText text={`${item.term} → ${item.translation}`} />}
-              className={`border-l-4 ${item.themeColor === 'primary' ? 'border-l-primary-500' : 'border-l-accent-500'}`}
-            >
-              <p className="text-text-main leading-relaxed">
-                <FormattedText text={item.description} />
-              </p>
-            </Card>
-          ))}
-        </div>
-      </section>
+
 
       {/* 6. Safety Risks (8 Items) */}
       <section className="space-y-8">

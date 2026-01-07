@@ -1,4 +1,4 @@
-import type { BasicTermItem, SafetyRuleItem, UsageExampleItem, HallucinationInfo, PromptingTipItem } from '../types';
+import type { SafetyRuleItem, UsageExampleItem, HallucinationInfo, PromptingTipItem } from '../types';
 
 export const whatIsAi = {
     title: 'AI（人工知能）の概要',
@@ -61,32 +61,7 @@ export const usageExamples: UsageExampleItem[] = [
     }
 ];
 
-export const terms: BasicTermItem[] = [
-    {
-        term: 'プロンプト',
-        translation: '「お願いメモ」',
-        description: 'AIへの命令文のことです。<br/>「〇〇について教えて」「〇〇な文章を作って」という、AIへの具体的にお願いを書いたメモのことです。',
-        themeColor: 'primary'
-    },
-    {
-        term: 'チャットボット',
-        translation: '「対話ロボット」',
-        description: 'LINEのような画面で、文字で会話できるAIのことです。<br/>人間と話すように質問や相談ができます。',
-        themeColor: 'accent'
-    },
-    {
-        term: 'ハルシネーション',
-        translation: '「うっかり間違い」',
-        description: 'AIがもっともらしい嘘をついてしまうことです。<br/>AIも時々間違えることがあるので、大切なことは必ず確認が必要です。',
-        themeColor: 'primary'
-    },
-    {
-        term: 'RAG（ラグ）',
-        translation: '「カンニング」',
-        description: 'AI自身の知識だけでなく、信頼できる外部データ（社内マニュアルなど）を参照してから回答する技術のことです。',
-        themeColor: 'accent'
-    }
-];
+
 
 export const hallucinationInfo: HallucinationInfo = {
     title: 'ハルシネーション（AIのつく嘘）について',

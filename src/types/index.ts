@@ -44,12 +44,7 @@ export interface CaseItem {
     };
 }
 
-export interface BasicTermItem {
-    term: string;
-    translation: string;
-    description: string;
-    themeColor: 'primary' | 'accent';
-}
+
 
 export interface SafetyRuleItem {
     id: number;
