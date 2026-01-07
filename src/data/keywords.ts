@@ -112,6 +112,10 @@ export const KEYWORDS: KeywordItem[] = [
     {
         term: 'モデル',
         description: 'モデルとは、AIの脳みその種類のようなもので、新しいモデルほど賢く複雑な質問に答えられます。'
+    },
+    {
+        term: 'リンク',
+        description: 'クリックすると別のページや場所へ移動できる、インターネット上の道案内のようなものです。'
     }
 
 ];
