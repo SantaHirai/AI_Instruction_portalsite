@@ -97,26 +97,30 @@ export const Tools: React.FC = () => {
                       </div>
                       <div className="flex-grow">
                         <h3 className="text-xl font-bold text-text-main mb-2"><FormattedText text={tool.catchphrase} /></h3>
-                        <p className="text-text-main mb-4 leading-relaxed">
-                          <FormattedText text={tool.description} />
-                        </p>
-
-                        {/* Optional Tool Image (Screenshot) */}
-                        {tool.image && (
-                          <div
-                            className="mb-6 rounded-xl overflow-hidden shadow-sm border border-slate-200 cursor-pointer group"
-                            onClick={() => setSelectedImage(tool.image!)}
-                          >
-                            <img
-                              src={tool.image}
-                              alt={`${tool.name} screen`}
-                              className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
-                            />
-                            <div className="text-center text-xs text-text-muted mt-2 pb-2 group-hover:text-primary-600 transition-colors">
-                              クリックして拡大
-                            </div>
+                        <div className="flex flex-col lg:flex-row gap-6 mb-4">
+                          <div className="flex-1">
+                            <p className="text-text-main leading-relaxed">
+                              <FormattedText text={tool.description} />
+                            </p>
                           </div>
-                        )}
+
+                          {/* Optional Tool Image (Screenshot) */}
+                          {tool.image && (
+                            <div
+                              className="lg:w-1/3 shrink-0 rounded-xl overflow-hidden shadow-sm border border-slate-200 cursor-pointer group self-start"
+                              onClick={() => setSelectedImage(tool.image!)}
+                            >
+                              <img
+                                src={tool.image}
+                                alt={`${tool.name} screen`}
+                                className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
+                              />
+                              <div className="text-center text-xs text-text-muted mt-2 pb-2 group-hover:text-primary-600 transition-colors">
+                                クリックして拡大
+                              </div>
+                            </div>
+                          )}
+                        </div>
 
                         <div className="bg-slate-50 p-4 rounded-lg text-sm mb-4">
                           <strong className="block text-slate-700 mb-1">こんな人におすすめ：</strong>

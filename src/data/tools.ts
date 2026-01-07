@@ -1,5 +1,10 @@
 import type { ToolItem } from '../types';
 import fireflyImg from '../assets/images/firefly_screenshot.png';
+import claudeImg from '../assets/images/claude_screenshot.png';
+import perplexityImg from '../assets/images/perplexity_screenshot.png';
+import sunoImg from '../assets/images/suno_screenshot.png';
+import geminiImg from '../assets/images/gemini_screenshot.png';
+import chatgptImg from '../assets/images/chatgpt_screenshot.png';
 
 export const tools: ToolItem[] = [
     {
@@ -16,6 +21,7 @@ export const tools: ToolItem[] = [
             'まずは有名なものから試したい'
         ],
         url: 'https://chatgpt.com/',
+        image: chatgptImg,
         colorTheme: 'emerald'
     },
     {
@@ -32,6 +38,7 @@ export const tools: ToolItem[] = [
             '画像についても質問したい'
         ],
         url: 'https://gemini.google.com/',
+        image: geminiImg,
         colorTheme: 'blue'
     },
     {
@@ -48,6 +55,7 @@ export const tools: ToolItem[] = [
             '丁寧な文章を作りたい'
         ],
         url: 'https://claude.ai/',
+        image: claudeImg,
         colorTheme: 'orange'
     },
     {
@@ -64,6 +72,7 @@ export const tools: ToolItem[] = [
             '調べ物を効率化したい'
         ],
         url: 'https://www.perplexity.ai/',
+        image: perplexityImg,
         colorTheme: 'cyan'
     },
     {
@@ -97,6 +106,7 @@ export const tools: ToolItem[] = [
             '音楽制作を気軽に楽しみたい'
         ],
         url: 'https://suno.com/',
+        image: sunoImg,
         colorTheme: 'pink'
     }
 ];
