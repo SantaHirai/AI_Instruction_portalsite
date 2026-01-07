@@ -8,8 +8,8 @@ interface FormattedTextProps {
 
 export const FormattedText: React.FC<FormattedTextProps> = ({ text }) => {
     const processText = (input: string) => {
-        // 1. Split by <br/>
-        return input.split(/<br\s*\/?>/gi).map((line, i, arr) => (
+        // 1. Split by <br/> or \n
+        return input.split(/<br\s*\/?>|\n/gi).map((line, i, arr) => (
             <React.Fragment key={i}>
                 {processLine(line)}
                 {i < arr.length - 1 && <br />}
