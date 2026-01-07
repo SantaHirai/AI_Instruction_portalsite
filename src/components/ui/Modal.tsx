@@ -9,6 +9,8 @@ interface ModalProps {
     className?: string;
 }
 
+import { createPortal } from 'react-dom';
+
 export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, title, className = '' }) => {
     const modalRef = useRef<HTMLDivElement>(null);
 
@@ -31,8 +33,8 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, title, 
 
     if (!isOpen) return null;
 
-    return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
+    return createPortal(
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
             {/* Backdrop */}
             <div
                 className="absolute inset-0 bg-slate-900/50 backdrop-blur-sm transition-opacity"
@@ -71,6 +73,7 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, title, 
                     {children}
                 </div>
             </div>
-        </div>
+        </div>,
+        document.body
     );
 };
