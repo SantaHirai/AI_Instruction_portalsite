@@ -116,6 +116,10 @@ export const KEYWORDS: KeywordItem[] = [
     {
         term: 'リンク',
         description: 'クリックすると別のページや場所へ移動できる、インターネット上の道案内のようなものです。'
+    },
+    {
+        term: 'Adobe',
+        description: '写真加工のPhotoshopや文書作成のPDFなど、クリエイティブな作業をするための有名なソフトウェアを作っている会社です。'
     }
 
 ];
