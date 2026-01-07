@@ -54,7 +54,7 @@ export const Cases: React.FC = () => {
           </h2>
 
           {item.type === 'dialogue' && item.dialogue && (
-            <div className="grid md:grid-cols-2 gap-6 items-start">
+            <div className="flex flex-col gap-4 md:max-w-2xl md:mx-auto w-full">
               {item.dialogue.map((line, idx) => (
                 <SpeechBubble
                   key={idx}
