@@ -18,9 +18,32 @@ export const FormattedText: React.FC<FormattedTextProps> = ({ text }) => {
     };
 
     const processLine = (line: string) => {
-        // 2. Split by <strong> tag
-        return line.split(/(<strong>.*?<\/strong>)/gi).map((part, j) => {
-            if (part.toLowerCase().startsWith('<strong>') && part.toLowerCase().endsWith('</strong>')) {
+        // 2. Split by <a> or <strong> tag
+        // Note: This regex assumes simple attributes and no nested tags of the same type
+        return line.split(/(<a\s+href=['"][^'"]*['"]>.*?<\/a>|<strong>.*?<\/strong>)/gi).map((part, j) => {
+            const lowerPart = part.toLowerCase();
+
+            if (lowerPart.startsWith('<a') && lowerPart.endsWith('</a>')) {
+                // Extract href and content
+                const match = part.match(/href=['"]([^'"]*)['"]>(.*?)<\/a>/i);
+                if (match) {
+                    const [, href, content] = match;
+                    return (
+                        <a
+                            key={j}
+                            href={href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary-600 hover:text-primary-700 hover:underline"
+                        >
+                            {/* Recursive processing for keywords inside link text */}
+                            {processKeywords(content, j)}
+                        </a>
+                    );
+                }
+            }
+
+            if (lowerPart.startsWith('<strong>') && lowerPart.endsWith('</strong>')) {
                 const innerText = part.replace(/<\/?strong>/gi, '');
                 return (
                     <strong key={j} className="font-bold text-accent-600">
