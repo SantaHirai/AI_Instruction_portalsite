@@ -6,13 +6,13 @@ import type { Category, CaseItem } from '../types';
 
 export const categories: Category[] = [
     { id: 'all', label: 'すべて' },
-    { id: 'housework', label: '家事・料理' },
-    { id: 'travel', label: '旅行・お出かけ' },
-    { id: 'writing', label: '事務・手続' },
-    { id: 'health', label: '健康・ヘルスケア' },
-    { id: 'hobby', label: '趣味・娯楽' },
-    { id: 'learning', label: '学び・自分磨き' },
-    { id: 'security', label: '防犯・トラブル' },
+    { id: 'housework', label: '家事' },
+    { id: 'travel', label: '旅行' },
+    { id: 'writing', label: '事務' },
+    { id: 'health', label: '健康' },
+    { id: 'hobby', label: '趣味' },
+    { id: 'learning', label: '学び' },
+    { id: 'security', label: '防犯' },
     { id: 'shopping', label: '買い物' },
 ];
 

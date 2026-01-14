@@ -77,7 +77,7 @@ export const Tooltip: React.FC<TooltipProps> = ({ text, content, className = '' 
         <>
             <span
                 ref={triggerRef}
-                className={`relative inline-block border-b border-dotted border-primary-500 cursor-help ${className}`}
+                className={`relative inline border-b border-dotted border-primary-500 cursor-help ${className}`}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={() => setIsVisible(false)}
             >

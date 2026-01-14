@@ -46,6 +46,7 @@ export const SpeechBubble: React.FC<SpeechBubbleProps> = ({
           : 'bg-primary-50 text-text-main mr-2'
         }
         shadow-sm border border-slate-300
+        portrait:flex-1 portrait:max-w-full
       `}>
         {/* Tail for Left Bubble */}
         {isLeft && (
