@@ -23,7 +23,7 @@ export const SpeechBubble: React.FC<SpeechBubbleProps> = ({
 
   return (
     <div className={`flex items-start gap-2 md:gap-4 ${isLeft ? 'flex-row' : 'flex-row-reverse'} ${className}`}>
-      <div className={`shrink-0 flex-col items-center gap-1 ${hideAvatarOnMobile ? 'hidden md:flex' : 'flex'}`}>
+      <div className={`shrink-0 flex-col items-center gap-1 portrait:hidden ${hideAvatarOnMobile ? 'hidden md:flex' : 'flex'}`}>
         <div className="w-9 h-9 md:w-12 md:h-12 rounded-full bg-primary-100 flex items-center justify-center text-primary-600 font-bold border-2 border-white shadow-sm font-sans overflow-hidden p-1">
           {avatar ? (
             <img
@@ -58,6 +58,11 @@ export const SpeechBubble: React.FC<SpeechBubbleProps> = ({
         )}
 
         <div className="relative z-10">
+          {name && (
+            <div className="hidden portrait:block font-bold mb-1 text-sm">
+              {name}
+            </div>
+          )}
           {children}
         </div>
       </div>

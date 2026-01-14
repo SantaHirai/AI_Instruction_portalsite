@@ -152,7 +152,6 @@ export const Cases: React.FC = () => {
             {/* Dialogue Section */}
             {selectedCase.type === 'dialogue' && selectedCase.dialogue && (
               <section className="space-y-4">
-                <h4 className="text-sm font-bold text-text-muted uppercase tracking-wider">会話例</h4>
                 <div className="flex flex-col gap-4 md:max-w-2xl md:mx-auto w-full bg-slate-50 p-4 rounded-2xl border border-slate-100">
                   {selectedCase.dialogue.map((line, idx) => (
                     <SpeechBubble
