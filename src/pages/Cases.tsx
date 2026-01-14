@@ -138,6 +138,7 @@ export const Cases: React.FC = () => {
           onClose={() => setSelectedCase(null)}
           title={selectedCase.title.replace(/<br\s*\/?>/gi, '')}
           className="md:mx-auto"
+          mobileFullScreen={true}
         >
           <div className="space-y-8">
             {/* Description Section */}

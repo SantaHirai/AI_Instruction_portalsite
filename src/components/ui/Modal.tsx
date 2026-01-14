@@ -7,11 +7,19 @@ interface ModalProps {
     children: React.ReactNode;
     title?: string;
     className?: string;
+    mobileFullScreen?: boolean;
 }
 
 import { createPortal } from 'react-dom';
 
-export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, title, className = '' }) => {
+export const Modal: React.FC<ModalProps> = ({
+    isOpen,
+    onClose,
+    children,
+    title,
+    className = '',
+    mobileFullScreen = false
+}) => {
     const modalRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -34,7 +42,7 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, title, 
     if (!isOpen) return null;
 
     return createPortal(
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
+        <div className={`fixed inset-0 z-[100] flex items-center justify-center ${mobileFullScreen ? 'p-0 sm:p-6' : 'p-4 sm:p-6'}`}>
             {/* Backdrop */}
             <div
                 className="absolute inset-0 bg-slate-900/50 backdrop-blur-sm transition-opacity"
@@ -46,9 +54,13 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, title, 
             <div
                 ref={modalRef}
                 className={`
-                    relative w-full max-w-4xl max-h-[90vh] flex flex-col
-                    bg-white rounded-2xl shadow-xl 
+                    relative w-full max-w-4xl flex flex-col
+                    bg-white shadow-xl 
                     animate-in fade-in zoom-in-95 duration-200
+                    ${mobileFullScreen
+                        ? 'h-[100dvh] sm:h-auto sm:max-h-[90vh] rounded-none sm:rounded-2xl'
+                        : 'max-h-[90vh] rounded-2xl'
+                    }
                     ${className}
                 `}
                 role="dialog"
@@ -69,7 +81,7 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, title, 
                 </div>
 
                 {/* Content - Scrollable */}
-                <div className="p-6 overflow-y-auto overscroll-contain">
+                <div className="flex-1 p-6 overflow-y-auto overscroll-contain">
                     {children}
                 </div>
             </div>
