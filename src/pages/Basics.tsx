@@ -102,35 +102,35 @@ export const Basics: React.FC = () => {
           <FormattedText text={hallucinationInfo.description} />
         </p>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          <div>
-            <h4 className="font-bold text-orange-800 mb-3 flex items-center gap-2">
-              <span className="bg-orange-200 text-orange-800 text-xs px-2 py-1 rounded"><FormattedText text="原因" /></span>
-              <FormattedText text="なぜ嘘をつくの？" />
-            </h4>
-            <ul className="space-y-3">
-              {hallucinationInfo.causes.map((c, i) => (
-                <li key={i} className="bg-white p-3 rounded-lg shadow-sm">
+        <div className="grid md:grid-cols-2 gap-x-8 gap-y-3">
+          {/* Headers */}
+          <h4 className="font-bold text-orange-800 flex items-center gap-2">
+            <span className="bg-orange-200 text-orange-800 text-xs px-2 py-1 rounded"><FormattedText text="原因" /></span>
+            <FormattedText text="なぜ嘘をつくの？" />
+          </h4>
+          <h4 className="font-bold text-green-800 flex items-center gap-2">
+            <span className="bg-green-200 text-green-800 text-xs px-2 py-1 rounded"><FormattedText text="対策" /></span>
+            <FormattedText text="どうすればいい？" />
+          </h4>
+
+          {/* Items */}
+          {hallucinationInfo.causes.map((c, i) => {
+            const counter = hallucinationInfo.countermeasures[i];
+            return (
+              <React.Fragment key={i}>
+                <div className="bg-white p-3 rounded-lg shadow-sm h-full">
                   <strong className="block text-gray-800 text-sm mb-1"><FormattedText text={c.title} /></strong>
                   <p className="text-xs text-gray-600"><FormattedText text={c.description} /></p>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-bold text-green-800 mb-3 flex items-center gap-2">
-              <span className="bg-green-200 text-green-800 text-xs px-2 py-1 rounded"><FormattedText text="対策" /></span>
-              <FormattedText text="どうすればいい？" />
-            </h4>
-            <ul className="space-y-3">
-              {hallucinationInfo.countermeasures.map((c, i) => (
-                <li key={i} className="bg-white p-3 rounded-lg shadow-sm border-l-4 border-green-400">
-                  <strong className="block text-gray-800 text-sm mb-1"><FormattedText text={c.title} /></strong>
-                  <p className="text-xs text-gray-600"><FormattedText text={c.description} /></p>
-                </li>
-              ))}
-            </ul>
-          </div>
+                </div>
+                {counter && (
+                  <div className="bg-white p-3 rounded-lg shadow-sm border-l-4 border-green-400 h-full">
+                    <strong className="block text-gray-800 text-sm mb-1"><FormattedText text={counter.title} /></strong>
+                    <p className="text-xs text-gray-600"><FormattedText text={counter.description} /></p>
+                  </div>
+                )}
+              </React.Fragment>
+            );
+          })}
         </div>
       </section>
 
