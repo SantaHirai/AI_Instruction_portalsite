@@ -29,17 +29,25 @@ export const AnswerExample: React.FC<AnswerExampleProps> = ({ response }) => {
 
             {isOpen && (
                 <div className="px-3 py-4 md:px-6 md:py-6 bg-accent-50/50 border-t border-slate-100 animate-fade-in">
-                    <SpeechBubble
-                        name="AI"
-                        position="left"
-                        avatar={avatars.ai}
-                        flipAvatar={true}
-                        hideAvatarOnMobile={true}
-                    >
-                        <div className="text-sm leading-relaxed">
-                            <FormattedText text={response} />
-                        </div>
-                    </SpeechBubble>
+                    {/* Mobile View: Plain Text */}
+                    <div className="block md:hidden text-sm leading-relaxed text-text-main">
+                        <FormattedText text={response} />
+                    </div>
+
+                    {/* Desktop View: Speech Bubble */}
+                    <div className="hidden md:block">
+                        <SpeechBubble
+                            name="AI"
+                            position="left"
+                            avatar={avatars.ai}
+                            flipAvatar={true}
+                            hideAvatarOnMobile={true}
+                        >
+                            <div className="text-sm leading-relaxed">
+                                <FormattedText text={response} />
+                            </div>
+                        </SpeechBubble>
+                    </div>
                 </div>
             )}
         </div>
