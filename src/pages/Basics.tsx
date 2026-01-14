@@ -184,7 +184,7 @@ export const Basics: React.FC = () => {
           <ShieldAlert className="w-8 h-8 text-red-600" />
           <h2 className="text-2xl font-bold text-text-main"><FormattedText text="AI利用に潜む「8つの危険」" /></h2>
         </div>
-        <p className="text-text-main"><FormattedText text="AIは「ガラス張りの会議室」。誰に見られても困らない情報だけを入力しましょう。" /></p>
+        <p className="text-text-main"><FormattedText text="AIは<strong>「ガラス張りの会議室」</strong>。誰に見られても困らない情報だけを入力しましょう。" /></p>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {safetyRules.map((rule) => (
